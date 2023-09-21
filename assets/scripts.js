@@ -123,7 +123,7 @@ $.each(__showCaseCarousels, function (indexInArray, valueOfElement) {
 });
 
 $('.featured-collections__showcase .nav-tabs a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-    var $target = $(e.target).attr('href');
+  var $target = $(e.target).attr('href');
 
     $($target).find('.flickity-enabled').flickity('resize');
 });
