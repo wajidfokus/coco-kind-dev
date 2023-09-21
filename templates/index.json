@@ -72,10 +72,10 @@
     "11056611-34c6-40bf-8b36-70e85397489a": {
       "type": "most-reviewed-test-section",
       "settings": {
-        "most_reviewd_heading": "",
-        "shop_all_anker": "",
-        "shop_all_text": "",
-        "slider_collection": ""
+        "most_reviewd_heading": "Most Popular products",
+        "shop_all_anker": "\/",
+        "shop_all_text": "Most Popular products",
+        "slider_collection": "automated-collection"
       }
     },
     "3a6f2227-743d-4776-9c4c-7d3e61d17771": {
