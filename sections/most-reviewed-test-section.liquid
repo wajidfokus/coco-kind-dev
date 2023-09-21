@@ -1,7 +1,6 @@
 {{ 'most-reviewd-test-section.css' | asset_url | stylesheet_tag }}
 
-    <script defer src="{{ 'vendor.js' | asset_url }}"></script>
-    <script defer src="{{ 'scripts.js' | asset_url }}"></script>
+   
 
 
 
@@ -27,7 +26,7 @@
             <div class="container">
                 <div class="carousel-wrapper">
                     <!-- if blocks > 4 : carousel-init -->
-                    <div class="product-blocks product-blocks--carousel-sm carousel-init">
+                    <div class="product-blocks product-blocks--carousel-sm {% if collections[section.settings.slider_collection].all_products_count > 4 %}carousel-init {% endif %}">
                         
 
 
