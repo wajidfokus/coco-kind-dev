@@ -3,8 +3,7 @@
 
 
 
-    <script defer src="{{ 'vendor.js' | asset_url }}"></script>
-    <script defer src="{{ 'scripts.js' | asset_url }}"></script>
+   
 
 
    
@@ -61,9 +60,9 @@
                     {% when 'SVG' %}  
                    
                       <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="{{ block.settings.svg_collection.handle }}-tab" data-toggle="tab"
-                            href="#{{ block.settings.svg_collection.handle }}" role="tab"
-                            aria-controls=" {{ block.settings.svg_collection.handle }}" aria-selected="true">
+                        <a class="nav-link {% if forloop.index == 1 %}active{% endif %}" id="{{ block.settings.svg_collection.handle }}{{ forloop.index }}-tab" data-toggle="tab"
+                            href="#{{ block.settings.svg_collection.handle }}{{ forloop.index }}" role="tab"
+                            aria-controls="{{ block.settings.svg_collection.handle }}{{ forloop.index }}" aria-selected="true">
                             <div class="icon-wrap">
                                 {{ block.settings.shop_by_SVG }}
                             </div>
@@ -91,15 +90,16 @@
 
 
                     
-                  <div class="tab-pane {% if forloop.index == 1 %}active{% endif %}" id=" {{ block.settings.svg_collection.handle }}" role="tabpanel"
-                        aria-labelledby=" {{ block.settings.svg_collection.handle }}-tab">
+                  <div class="tab-pane {% if forloop.index == 1 %}active{% endif %}" id="{{ block.settings.svg_collection.handle }}{{ forloop.index }}" role="tabpanel"
+                        aria-labelledby="{{ block.settings.svg_collection.handle }}{{ forloop.index }}-tab"> {% comment %}class=active {% endcomment %}
                         <div class="carousel-wrapper">
                             <!-- if blocks > 4 : carousel-init -->
-                            <div class="product-blocks product-blocks--carousel-sm carousel-init">
+                            <div class="product-blocks product-blocks--carousel-sm {% if block.settings.svg_collection.all_products_count > 4 %}carousel-init {% endif %}">
                                 
 
-
-     {% for product in collections['all'].products  %}                         
+{% if block.settings.svg_collection.all_products_count > 0 %}
+  
+     {% for product in collections[block.settings.svg_collection.handle ].products  %}                         
                               
                               <div class="product-block">
                                     <div class="product-block__inner">
@@ -215,8 +215,10 @@
                                         </div>
                                     </div>
                                 </div>
-      {% endfor %}                        
-                              
+      {% endfor %}         
+                                                              {% else %}
+  HTML for empty collection
+                   {% endif %}           
                               
                                 
                                 
@@ -262,11 +264,6 @@
             "id": "shop_by_heading",
             "label": "Heading"
             
-          },
-          {
-             "type": "url",
-              "id": "shop_all_anker",
-              "label": "Button link"
           }
  ],
 	"blocks": [
