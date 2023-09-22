@@ -1,4 +1,3 @@
-{{ 'most-reviewd-test-section.css' | asset_url | stylesheet_tag }}
 
  <section class="featured-collections text-black">
         <div class="featured-collections__header">
@@ -200,7 +199,7 @@
                                             </div>
                                             <div class="btn-wrap">
                                                 <a href="#" class="btn btn-reset btn-atc">
-                                                    <span class="atc-text">Add to Cart</span>
+                                                    <span class="atc-text add_to_cart_by_varient" varient_id="{{ product.variants[0].id }}">Add to Cart</span>
                                                     <span class="price-text">{{ product.price | money  }}</span>
                                                 </a>
                                             </div>
