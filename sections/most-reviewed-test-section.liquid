@@ -1,9 +1,5 @@
 {{ 'most-reviewd-test-section.css' | asset_url | stylesheet_tag }}
 
-   
-
-
-
 
    <section class="featured-collections text-black">
         <div class="featured-collections__header">
@@ -142,6 +138,19 @@
                                         
                                             <span class="atc-text add_to_cart_by_varient" varient_id="{{ product.variants[0].id }}">Add to Cart </span>
   
+
+                        
+                        {%- assign product_form_id = 'product-form-' | append: section.id -%}
+                        
+
+
+
+    <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+
+
+
+
+
                                             <span class="price-text">{{ product.price | money  }}</span>
                                         </a>
                                     </div>
