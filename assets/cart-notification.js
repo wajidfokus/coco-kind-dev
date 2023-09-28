@@ -76,9 +76,4 @@ class CartNotification extends HTMLElement {
   }
 }
 
-
-
-
-
-
 customElements.define('cart-notification', CartNotification);
