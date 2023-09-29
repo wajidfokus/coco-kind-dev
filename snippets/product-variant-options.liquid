@@ -48,7 +48,7 @@
   -%}
 
 
-{{ forloop.index0 }} => {{ product.variants[0].title |json }}
+{{ forloop.index0 }} => {{ product.variants[forloop.index].title |json }}
   
   {%- if block.settings.picker_type == 'button' -%}
     <input
