@@ -48,7 +48,7 @@
   -%}
 
 
-{{ forloop.index0 }} => {{ product.variants[0].price }}
+ {{ product.variants[0].price }}
   
   {%- if block.settings.picker_type == 'button' -%}
     <input
@@ -65,7 +65,7 @@
       {% endif %}
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ value -}} ---> 
+      {{ value -}}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
