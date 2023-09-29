@@ -14,6 +14,9 @@
     block: block
   %}
 {% endcomment %}
+
+{{ product.variants | json }}
+
 {%- liquid
   assign variants_available_arr = product.variants | map: 'available'
   assign variants_option1_arr = product.variants | map: 'option1'
@@ -45,6 +48,8 @@
     endfor
   -%}
 
+
+  
   {%- if block.settings.picker_type == 'button' -%}
     <input
       type="radio"
