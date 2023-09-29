@@ -48,7 +48,7 @@
   -%}
 
 
- {{ product.variants[0].price | divided_by: 100}}
+{{ forloop.index0 }} => {{ product.variants[forloop.index1 ].price }}
   
   {%- if block.settings.picker_type == 'button' -%}
     <input
