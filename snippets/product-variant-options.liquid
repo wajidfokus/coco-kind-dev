@@ -48,7 +48,7 @@
   -%}
 
 
- {{ product.variants[0].price }}
+ {{ product.variants[0].price | divided_by: 100}}
   
   {%- if block.settings.picker_type == 'button' -%}
     <input
